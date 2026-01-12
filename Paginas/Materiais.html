@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> Materiais Eletricos </title>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Stoke">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karla">
+		<link rel="stylesheet" type = "text/css" href ="../ChiqueEletrico.css">
+	</head>
+	<body>
+		<header>
+			<img src = "../Imagens/LogoChiqueEletricoTopo.png" class = "imgLogo"> 
+			<address class = "ender">
+			Rua Chique Chique, 123 <br>
+			Tel: (21) 91234-4321 <br>
+			<a href = "mailto:contato@chiqueletrico.com.br"> contato@chiqueletrico.com.br </a>
+			</address>
+		</header>
+		<nav>
+			<ul>
+				<li> <a href = "ChiqueEletrico.html" target = "_blank">  Apresentação  </a> </li> 
+				<li> <a href = "Materiais.html">  Materiais  </a> </li>        
+				<li> <a href = "Acabamentos.html" target = "_blank"> Acabamentos  </a> </li> 
+				<li> <a href = "Pedidos.html" target = "_blank">  Pedidos  </a> </li> 
+			</ul>
+		</nav>
+		<section>
+			<h1 class = "titulo"> Materiais Elétricos </h1>
+			<ul class = "listaMat">
+				<li> Cabo Flexível: </li>
+					<ol> 
+						<li>  <a target = "_self" href = "javascript: abrirItem(0);"> Sil Preto 2,5mm 100m  </a> </li>
+						<li> <a target = "_self" href = "javascript: abrirItem(1);"> Cobrecom Azul 2,5mm 100m  </a> </li>
+						<li> <a target = "_self" href = "javascript: abrirItem(2);"> Sil verde 2,5mm 50m  </a> </li>
+					</ol>
+				<li> Terminais Ilhós: </li>
+					<ol>
+						<li> <a target = "_self" href = "javascript: abrirItem(3);"> 2,5mm 200 peças  </a> </li>
+						<li> <a target = "_self" href = "javascript: abrirItem(4);"> 4mm 100 peças  </a> </li>
+					</ol>
+					<li> Conduíte: </li>
+					<ol> 
+						<li> <a target = "_self" href = "javascript: abrirItem(5);"> Plastilit 1/2" 25m  </a> </li>
+						<li> <a target = "_self" href = "javascript: abrirItem(6);"> Plastilit 3/4" 50m  </a> </li>
+					</ol>
+				</ul>
+		</section>
+		
+		<script language = "javascript">
+		var tabMateriais = [
+			["Cabo Flexível", "Sil Preto 2,5mm", "SilPreto2p5_150", "100m", "R$ 200,00"],
+			["Cabo Flexível", "Cobrecom Azul 2,5mm", "CobrecomAzul2p5_150", "100m", "R$ 190,00"],
+			["Cabo Flexível", "Sil verde 2,5mm", "SilVerde2p5_150", "50m", "R$ 150,00"],
+			["Terminais Ilhós", "2,5mm", "TermIlhos2p5_150", "200 peças", "R$ 30,00"],
+			["Terminais Ilhós", "4mm", "TermIlhos4_150", "100 peças", "R$ 20,00"],
+			["Conduíte", "Plastilit 1/2\"", "Plastlit1b2_150", "25m", "R$ 50,00"],
+			["Conduíte", "Plastilit 3/4\"", "Plastlit3b4_150", "50m", "R$ 100,00"]
+		];
+		
+		function abrirItem(item) {
+			var janela = open("", tabMateriais[item][1], "width = 420,height = 420");
+			
+			with (janela.document) {
+				write("<!DOCTYPE html>");
+				write("<html> <head> <title> Materiais Elétricos </title>");
+				write("<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Stoke'>");
+				write("<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Karla'>");
+				write("<link rel='stylesheet' type = 'text/css' href ='../ChiqueEletrico.css'>");
+				write("</head> <body>");
+				
+				write("<div style = 'width:360px; margin: 24px auto; padding: 20px; text-align:center; background-color: #2277DD; color: #FFEE44; font-family: Karla, Verdana;'>"); // Tentando manter as frases e imagem centralizadas
+				
+				write("<h1>", tabMateriais[item][0], "</h1>");
+				write("<h2>", tabMateriais[item][1], "</h2>");
+				write("<p><img src='../Imagens/", tabMateriais[item][2], ".jpg'></p>");
+				write("<p>", tabMateriais[item][3], "</p>");
+				write("<p> Preço: ", tabMateriais[item][4], "</p>");
+				write("<form> <input type = 'button' value = 'Fechar' onClick = 'window.close();' ></form>");
+				write ("</div></body></html>");
+				close();
+			}
+		}
+	</script>
+
+		
+	</body>
+</html>
