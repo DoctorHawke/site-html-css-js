@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> Acabamentos Eletricos </title>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Stoke">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karla">
+		<link rel="stylesheet" type = "text/css" href ="../ChiqueEletrico.css">
+	</head>
+	<body>
+		<header>
+			<img src = "../Imagens/LogoChiqueEletricoTopo.png" class = "imgLogo"> 
+			<address class = "ender">
+			Rua Chique Chique, 123 <br>
+			Tel: (21) 91234-4321 <br>
+			<a href = "mailto:contato@chiqueletrico.com.br"> contato@chiqueletrico.com.br </a>
+			</address>
+		</header>
+		<nav>
+			<ul>
+				<li> <a href = "ChiqueEletrico.html" target = "_blank">  Apresentação  </a> </li> 
+				<li> <a href = "Materiais.html" target = "_blank">  Materiais  </a> </li>         
+				<li> <a href = "Acabamentos.html"> Acabamentos  </a> </li> 
+				<li> <a href = "Pedidos.html" target = "_blank">  Pedidos  </a> </li> 
+			</ul>
+		</nav>
+		<section>
+			<table class = "tabAcab">
+				<tr class = "linTH">
+					<th colspan = "3"> Acabamentos </th>
+				</tr>
+				<tr class = "linTH">
+					<th> Marca/Linha </th>
+					<th> Produto </th>
+					<th> Descrição </th>
+				</tr>
+				<tr>
+					<td class = "colTH" rowspan = "3"> Ilumi/Stylus </td>
+					<td class = "menuTab">  <a target = "_self" href = "javascript: mostrarProduto(1);"> Placa 4x4 </a> </td> <!-- Importante começar do 1, pois o zero é a imagem vazia -->
+					<td rowspan = "6" style = "text-align: center; vertical-align: middle; ">
+						<div id = "NomeDes" > </div>
+						<div id = "ImgDes"> <img src="../Imagens/vazio_150.png"> </div>
+						<div id = "PrcDes"> </div>
+					</td>
+				</tr>
+				<tr>
+					<td class = "menuTab"> <a target = "_self" href = "javascript: mostrarProduto(2);"> Tomada  </a> </td>
+				</tr>
+				<tr>
+					<td class = "menuTab"> <a target = "_self" href = "javascript: mostrarProduto(3);"> Interruptor </a> </td>
+				</tr>
+				<tr>
+					<td class = "colTH" rowspan = "3"> Ilumi/Slim </td>
+					<td class = "menuTab"> <a target = "_self" href = "javascript: mostrarProduto(4);"> Placa 4x2  </a> </td>
+				</tr>
+				<tr>
+					<td class = "menuTab"> <a target =  "_self" href = "javascript: mostrarProduto(5);"> Módulo Tomada </a> </td>
+				</tr>
+				<tr>
+					<td class = "menuTab"> <a target = "_self" href = "javascript: mostrarProduto(6);"> Módulo Interruptor </a> </td>
+				</tr>
+			</table>
+		</section>
+		
+		<script language = "javascript">
+		var tabAcabamento = [
+			["", "", "vazio_150", ""],
+			["Ilumi/Stylus", "Placa 4x4", "Stylus2tomadas_150.png", "4,00"],
+			["Ilumi/Stylus", "Tomada", "stylusTomada_150.png", "6,00"],
+			["Ilumi/Stylus", "Interruptor", "stylusInterruptor_150.png", "6,00"],
+			["Ilumi/Slim", "Placa 4x2", "SlimPlaca4x2_150.png", "4,00"],
+			["Ilumi/Slim", "Módulo Tomada", "SlimModuloTomada_150.png", "5,00"],
+			["Ilumi/Slim", "Módulo Interruptor", "SlimModuloInterruptor_150.png", "4,00"]
+		];
+		
+		function mostrarProduto(produto) {
+			var nome = document.getElementById("NomeDes");
+			var imagem = document.getElementById("ImgDes");
+			var preco = document.getElementById("PrcDes");
+			
+			nome.innerHTML = "<h2>" + tabAcabamento[produto][0] + "</h2>" + "<p style = 'font-weight: bold; '>" + tabAcabamento[produto][1] + "</p>";
+			imagem.innerHTML = "<img src='../Imagens/" + tabAcabamento[produto][2] + "'>";
+			preco.innerHTML = "<strong> Preço: R$ </strong> " + "<span style = 'color:#CC0000; font-weight:bold; '>" + tabAcabamento[produto][3]; + "</span>";
+		}
+		</script>
+		
+	</body>
+</html>
